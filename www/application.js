@@ -58,5 +58,11 @@ document.addEventListener('deviceready', function() {
       });
 
 
+      window.addEventListener('deviceorientation', function(event) {
+        var diffX = event.gamma;
+        if ( diffX < -5 ) $( '#bilder' ).css( { left: diffX*25 });
+        if ( diffX > 5 ) $( '#bilder' ).css( { right: -diffX*25 });
+      });
+
     });
 });
