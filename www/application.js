@@ -11,8 +11,15 @@ document.addEventListener('deviceready', function() {
       	'fruehlings-special-top-of-tyrol.jpg'
       ];
 
+      var audio = $( '#swush' ).get(0);
+
       var aktuell = 0;
       var showImage = function( i ) {
+
+        if ( i != 0 ) {
+          audio.play();
+        }
+
       	aktuell += i;
       	if ( aktuell < 0 ) aktuell = bilder.length - 1; // wieder ans ende
       	if ( aktuell > bilder.length - 1 ) aktuell = 0; // wieder zum anfang
