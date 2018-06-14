@@ -28,6 +28,11 @@ document.addEventListener('deviceready', function() {
 
       var showNext = function() {	showImage( 1 ); }
       var showPrev = function() { showImage( -1 ); }
+
+      $( document ).on( 'click', '#bilder', function() {
+        audio.play();
+      });
+
       $( document ).on( 'click', '#next', showNext );
       $( document ).on( 'click', '#prev', showPrev );
       $( document ).ready( function() {
