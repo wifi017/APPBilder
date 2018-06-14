@@ -11,13 +11,11 @@ document.addEventListener('deviceready', function() {
       	'fruehlings-special-top-of-tyrol.jpg'
       ];
 
-      var audio = $( '#swush' ).get(0);
-
       var aktuell = 0;
       var showImage = function( i ) {
 
         if ( i != 0 ) {
-          audio.play();
+           $( '#swush' ).get(0).play();
         }
 
       	aktuell += i;
@@ -30,7 +28,7 @@ document.addEventListener('deviceready', function() {
       var showPrev = function() { showImage( -1 ); }
 
       $( document ).on( 'click', '#bilder', function() {
-        audio.play();
+        $( '#swush' ).get(0).play();
       });
 
       $( document ).on( 'click', '#next', showNext );
@@ -60,8 +58,8 @@ document.addEventListener('deviceready', function() {
 
       window.addEventListener('deviceorientation', function(event) {
         var diffX = event.gamma;
-        if ( diffX < -5 ) $( '#bilder' ).css( { left: diffX*25 });
-        if ( diffX > 5 ) $( '#bilder' ).css( { right: -diffX*25 });
+        if ( diffX < -10 ) $( '#bilder' ).css( { left: diffX*5 });
+        if ( diffX > 10 ) $( '#bilder' ).css( { right: -diffX*5 });
       });
 
     });
