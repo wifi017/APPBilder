@@ -1,6 +1,9 @@
 document.addEventListener('deviceready', function() {
     // erst jetzt ist APP geladen und ready um was zu tun!
     console.log( 'DEVICE READY!' );
+
+    window.screen.orientation.lock('portrait');
+
     $( document ).ready( function() {
       console.log( 'DOM READY!' );
 
@@ -27,10 +30,6 @@ document.addEventListener('deviceready', function() {
       var showNext = function() {	showImage( 1 ); }
       var showPrev = function() { showImage( -1 ); }
 
-      $( document ).on( 'click', '#bilder', function() {
-        $( '#swush' ).get(0).play();
-      });
-
       $( document ).on( 'click', '#next', showNext );
       $( document ).on( 'click', '#prev', showPrev );
       $( document ).ready( function() {
@@ -54,6 +53,7 @@ document.addEventListener('deviceready', function() {
       	downX = 0;
       	$( '#bilder' ).css( { left: 0, right: 0 });
       });
+
 
 
       window.addEventListener('deviceorientation', function(event) {
