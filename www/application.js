@@ -28,8 +28,8 @@ document.addEventListener('deviceready', function() {
       });
 
       var downX = 0;
-      $( document ).on( 'mousedown touchstart', '#bilder', function( event ) {
-      		downX = event.originalEvent.clientX;
+      $( document ).on( 'touchstart', '#bilder', function( event ) {
+          downX = event.originalEvent.touches[0].clientX;
       });
       $( document ).on( 'touchmove', '#bilder', function( event ) {
       	if ( downX == 0 ) return;
